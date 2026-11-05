@@ -16,22 +16,24 @@ Regras centrais:
 - Nunca deduzir: contexto do cliente primeiro, depois perguntas.
 - Onboarding na etapa 0: reconhece máquina, projeto na Veleiro, repositório e onde vivem as tarefas do cliente.
 
-## Instalação
+## Comece aqui
 
-**Num repositório de cliente (recomendado para o time):** copie as pastas de `skills/` para `.claude/skills/` do repositório e faça commit. Todo dev que clonar recebe as skills no Claude Code.
+Peça pro seu agente ativar a skill:
 
-**Pessoal (todos os seus projetos):** copie as pastas de `skills/` para `~/.claude/skills/`.
+```text
+Instale e ative as skills de https://github.com/SR-Consulting/sr-skills neste projeto.
+```
 
-**claude.ai / Cowork:** faça upload de cada pasta como skill nas configurações da conta.
+Pronto. O agente lê este README, instala a skill certa e já começa a usar.
 
-## Hook opcional de SessionStart
+## Instalação manual
 
-`hooks/sr-dev-flow-start.sh` segue o modelo do Superpowers: ao abrir uma sessão num repositório, injeta a regra de carregar a skill certa (`sr-dev-flow-sf` em repositório Salesforce, `sr-dev-flow` nos demais) antes de responder.
+Para o agente (ou para quem preferir fazer na mão):
 
-1. Copie o script para `~/.claude/hooks/`.
-2. Acrescente o conteúdo de `hooks/settings-snippet.json` ao seu `~/.claude/settings.json`.
-
-No Windows, o Claude Code roda o hook pelo Git Bash.
+- **Repositório de cliente (time todo):** copie as pastas de `skills/` para `.claude/skills/` do repositório e faça commit.
+- **Pessoal (todos os seus projetos):** copie as pastas de `skills/` para `~/.claude/skills/`.
+- **claude.ai / Cowork:** faça upload de cada pasta como skill nas configurações da conta.
+- **Hook opcional:** copie `hooks/sr-dev-flow-start.sh` para `~/.claude/hooks/` e acrescente `hooks/settings-snippet.json` ao `~/.claude/settings.json`. Ao abrir uma sessão, ele carrega `sr-dev-flow-sf` em repositório Salesforce e `sr-dev-flow` nos demais. No Windows, roda pelo Git Bash.
 
 ## Como contribuir
 
